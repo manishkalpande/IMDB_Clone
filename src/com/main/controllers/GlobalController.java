@@ -11,6 +11,7 @@ public class GlobalController
 	 {
 	 return "index";
 	 }
+	
 
 
 }
