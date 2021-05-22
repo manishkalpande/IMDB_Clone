@@ -39,7 +39,7 @@
     <div class="w3-right w3-hide-small">
       <a href="#projects" class="w3-bar-item w3-button">IMDBpro</a>
       <a href="#about" class="w3-bar-item w3-button">Watchist</a>
-      <a href="#contact" class="w3-bar-item w3-button">Sign In</a>
+      <a href="login" class="w3-bar-item w3-button">Sign In</a>
     </div>
   </div>
 </div>

@@ -33,5 +33,4 @@ public class GlobalController {
 		
 		return "error";
 	}
-
 }
