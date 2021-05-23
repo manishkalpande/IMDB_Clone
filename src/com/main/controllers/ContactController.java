@@ -18,7 +18,7 @@ public class ContactController {
 		return "contact";
 	}
 	
-	@RequestMapping(path = "/processform", method = RequestMethod.POST)
+	@RequestMapping(path = "/processform",  method={RequestMethod.POST, RequestMethod.GET})
 	public String processForm(@RequestParam("email") String userEmail,@RequestParam("name") String userName
 			,@RequestParam("pass") String userPassword ,Model model) {
 		

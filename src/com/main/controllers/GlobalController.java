@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -56,12 +58,57 @@ public class GlobalController {
 
 		return (mv);
 	}
-	
+
 	@RequestMapping("/login")
 	public String loginUser() {
-		
+
 		System.out.println("login controller");
 		return "login";
+	}
+
+	@RequestMapping("/upload")
+	public String showForm() {
+		System.out.println("movie upload controller");
+		return "upload_movies";
+	}
+
+	@RequestMapping(path = "/processform1", method = { RequestMethod.POST, RequestMethod.GET })
+	public String processForm(@RequestParam("name") String filmName, @RequestParam("type") String filmType,
+			@RequestParam("reldate") String releaseDate, @RequestParam("lead") String leadActor,
+			@RequestParam("director") String director, @RequestParam("genre") String genre,
+			@RequestParam("length") String playTime, @RequestParam("certificate") String certificate,
+			@RequestParam("description") String description,@RequestParam("writer") String writer,
+			@RequestParam("category") String category,@RequestParam("relcountry") String relCountry,Model model) {
+
+		System.out.println("Film Name : " + filmName);
+		System.out.println("Film Type : " + filmType);
+		System.out.println("Release Date : " + releaseDate);
+		System.out.println("Lead Actor : " + leadActor);
+		System.out.println("Director : " + director);
+		System.out.println("Genre : " + genre);
+		System.out.println("Play Time : " + playTime);
+		System.out.println("Certificate : " + certificate);
+		System.out.println("Description : "+description);
+		System.out.println("Writer : "+writer);
+		System.out.println("Category : "+category);
+		System.out.println("Release Country : "+relCountry);
+
+		// process
+		
+		model.addAttribute("name", filmName);
+		model.addAttribute("type", filmType);
+		model.addAttribute("reldate", releaseDate);
+		model.addAttribute("lead", leadActor);
+		model.addAttribute("director", director);
+		model.addAttribute("genre", genre);
+		model.addAttribute("length", playTime);
+		model.addAttribute("certificate", certificate);
+		model.addAttribute("description", description);
+		model.addAttribute("writer", writer);
+		model.addAttribute("category", category);
+		model.addAttribute("relcountry", relCountry);
+		
+		return "success";
 	}
 
 }
