@@ -75,7 +75,7 @@
   <hr>
 
 <br/>
-<a href="login.jsp">login here</a>
+<a href="login">login here</a>
 
 </body>
 </html>

@@ -10,6 +10,7 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 
 
 			 <div class="imgcontainer">
@@ -44,5 +45,8 @@
         		<a href="NewRegister.html">New User? Register here</a>
         </div>
 
+=======
+<h1>hello</h1>
+>>>>>>> 222e35afa4799fbbc37561f478cd561e016971ba
 </body>
 </html>
