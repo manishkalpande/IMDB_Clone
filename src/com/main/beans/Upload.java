@@ -1,7 +1,5 @@
 package com.main.beans;
 
-import java.util.Date;
-
 public class Upload {
 	private String name;
 	private String type;
@@ -155,9 +153,11 @@ public class Upload {
 	public String getReldate() {
 		return reldate;
 	}
+	
 	/**
 	 * @param reldate the reldate to set
 	 */
+	
 	public void setReldate(String reldate) {
 		this.reldate = reldate;
 	}
@@ -169,5 +169,4 @@ public class Upload {
 				+ relcountry + "]";
 	}
 	
-
 }
