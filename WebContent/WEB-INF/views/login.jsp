@@ -7,8 +7,13 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
+<<<<<<< HEAD
+
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+=======
 <link href="<c:url value="/resources/css/stylesheet.css"/>">
 
+>>>>>>> d8ac3789c8d03669d60fbf1b4dd995fa2b3c7dd4
 
 </head>
 <body>
