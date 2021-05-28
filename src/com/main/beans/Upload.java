@@ -169,5 +169,7 @@ public class Upload {
 				+ relcountry + "]";
 	}
 	
-
+	public Upload() {
+		System.out.print("upload java page");
+	}
 }

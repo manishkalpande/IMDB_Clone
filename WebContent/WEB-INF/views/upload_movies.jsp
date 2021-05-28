@@ -109,25 +109,25 @@
 			
 			<div>Certificate
 					<div class="form-check">
-		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="U">
+		  <input class="form-check-input" type="radio" name="certificate" id="flexRadioDefault1" value="U">
 		  <label class="form-check-label" for="flexRadioDefault1">
 		    U
 		  </label>
 		</div>
 		<div class="form-check">
-		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="UA" checked>
+		  <input class="form-check-input" type="radio" name="certificate" id="flexRadioDefault2" value="UA" checked>
 		  <label class="form-check-label" for="flexRadioDefault2">
 		    U/A
 		  </label>
 		</div>
 		<div class="form-check">
-		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="A" checked>
+		  <input class="form-check-input" type="radio" name="certificate" id="flexRadioDefault2" value="A" checked>
 		  <label class="form-check-label" for="flexRadioDefault2">
 		    A
 		  </label>
 		</div>
 		<div class="form-check">
-		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="S" checked>
+		  <input class="form-check-input" type="radio" name="certificate" id="flexRadioDefault2" value="S" checked>
 		  <label class="form-check-label" for="flexRadioDefault2">
 		    S
 		  </label>
