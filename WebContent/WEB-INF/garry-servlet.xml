@@ -19,7 +19,6 @@
  
  <mvc:annotation-driven />
 
-
 <mvc:resources location="/WEB-INF/resources/" mapping="/resources/**" />
  
  <bean id="viewResolver"
