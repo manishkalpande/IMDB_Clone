@@ -68,6 +68,7 @@ public class GlobalController {
 	@RequestMapping("/login")
 	  public String loginUser()
 	  {
+		
 	    System.out.println("login page");
 	    
 	    return "login";

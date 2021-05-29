@@ -169,10 +169,9 @@ public class Upload {
 				+ relcountry + "]";
 	}
 	
-<<<<<<< HEAD
+
 	public Upload() {
 		System.out.print("upload java page");
 	}
-=======
->>>>>>> d8ac3789c8d03669d60fbf1b4dd995fa2b3c7dd4
+
 }
