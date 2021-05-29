@@ -7,17 +7,12 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
-<<<<<<< HEAD
-
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
-=======
-<link href="<c:url value="/resources/css/stylesheet.css"/>">
 
->>>>>>> d8ac3789c8d03669d60fbf1b4dd995fa2b3c7dd4
+<link href="<c:url value="/resources/css/stylesheet.css"/>">
 
 </head>
 <body>
-
 
 			 <div class="imgcontainer">
     <img src="image/e_wallet.png" width="120" height="230" alt="Avatar" class="avatar">
@@ -26,7 +21,7 @@
                 <div class="container">
                 <h1>E_wallet</h1>
 
-        	<form method="post" action="Check">
+        	<form  method="post" action="check">
         		<table>
         		 <tr>
 	 		<td><label for=""><b>Enter UserID</label></td>
@@ -50,8 +45,6 @@
   				<br>
         		<a href="NewRegister.html">New User? Register here</a>
         </div>
-
-<h1>hello</h1>
 
 </body>
 </html>
