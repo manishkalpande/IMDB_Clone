@@ -2,5 +2,6 @@
 /.settings/
 .classpath
 .project
-
+/.metadate/
 /bin/
+/src/com/main/beans/PasswordHashing.java

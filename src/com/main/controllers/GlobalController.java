@@ -1,9 +1,18 @@
 package com.main.controllers;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,14 +20,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
-import com.main.beans.Upload;
-
+import com.main.beans.*;
 
 
 @Controller
 public class GlobalController {
-
+	
+	@Autowired
+	HttpSession ses;
+	
+	@Autowired
+	HttpServletRequest request;
+	
+	@Autowired
+	HttpServletResponse response;
+	
 	@RequestMapping("/")
 	public String home() {
 		System.out.println("index page");
@@ -70,10 +88,56 @@ public class GlobalController {
 	  {
 		
 	    System.out.println("login page");
-	    
 	    return "login";
 	  }
+	@RequestMapping(path = "/check",  method={RequestMethod.POST, RequestMethod.GET})
+	public String processForm(@ModelAttribute Check check,Model model) {		
+		System.out.println(check);
+		// process
+		String uid=check.getUid();
+		String psw=check.getPswd();
+		
+		Connection con;
+		PreparedStatement pst;
+		ResultSet rs;
+		try {
+			DBConnector dbc=new DBConnector();
+			con=dbc.getDbconnection();
+			pst = con.prepareStatement("select * from users where user_id=? and pass=?;");
+			pst.setString(1, uid);
+			pst.setString(2, psw);
+			rs = pst.executeQuery();
 
+			if(rs.next())
+			{
+				ses=request.getSession(true);
+				ses.setAttribute("userid",uid);
+				
+				/*
+				 * String mobno=rs.getString("mob_no"); HttpSession
+				 * ses=request.getSession(true); ses.setAttribute("user_id", id);
+				 * ses.setAttribute("mob_no", mobno);
+				 */
+				return "index";
+				
+			}	
+			else
+			{
+				return "failure";
+			}			
+			
+		}catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		return "success";	
+	}
+	
+//	@RequestMapping("/")
+//	public String newRegister()
+//	{
+//		
+//		return "";
+//	}
 
 	@RequestMapping("/upload")
 	public String showForm() {
@@ -81,11 +145,36 @@ public class GlobalController {
 		return "upload_movies";
 	}
 
-	@RequestMapping(path = "/processform1",  method={RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(path = "/processform1",  method={RequestMethod.POST})
 	public String processForm(@ModelAttribute Upload upload,Model model) {		
 		System.out.println(upload);
 		// process		
 		return "success";
 	}
+	
+	@RequestMapping(path= "/RegisterUser", method= {RequestMethod.GET})
+	public String newUserRegister(@ModelAttribute User user,Model model)
+	{
+		
+		
+		return"";
+	}
+	
+	@RequestMapping("/trilermovies")
+	public RedirectView trailerMovies(@RequestParam("movienm") String trailer)
+	{
+		String url="https://www.youtube.com/results?search_query=" +trailer+ " official trailer";
+		
+		RedirectView redirectview =new RedirectView();
+		
+		redirectview.setUrl(url);
+		
+		return redirectview;
+	}
+	
+	
+	
+	
+	
 
 }

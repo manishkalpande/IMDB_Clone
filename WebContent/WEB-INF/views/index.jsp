@@ -6,8 +6,6 @@
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Insert title here</title>
-
 <title>IMDB</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,7 +48,7 @@
     <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
     <div class="w3-container">
       <h3><b>TITLE HEADING</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+      <h5>Title description,  <%=session.getId() %> <span class="w3-opacity">April 7, 2014</span></h5>
       	        <div class="w3-col m8 s12">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
         </div>

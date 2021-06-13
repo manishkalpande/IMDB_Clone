@@ -8,15 +8,19 @@
 <title>Insert title here</title>
 
 
+
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
 
 <link href="<c:url value="/resources/css/stylesheet.css"/>">
 
 
 
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+
+<link href="<c:url value="/resources/css/stylesheet.css"/>">
+
 </head>
 <body>
-
 
 			 <div class="imgcontainer">
     <img src="image/e_wallet.png" width="120" height="230" alt="Avatar" class="avatar">
@@ -25,7 +29,7 @@
                 <div class="container">
                 <h1>E_wallet</h1>
 
-        	<form method="post" action="Check">
+        	<form  method="post" action="check">
         		<table>
         		 <tr>
 	 		<td><label for=""><b>Enter UserID</label></td>
@@ -47,10 +51,8 @@
         	</form>
         	        <a href="Adminlogin.jsp">Admin Login here</a>
   				<br>
-        		<a href="NewRegister.html">New User? Register here</a>
+        		<a href="newRegister">New User? Register here</a>
         </div>
-
-<h1>hello</h1>
 
 </body>
 </html>
