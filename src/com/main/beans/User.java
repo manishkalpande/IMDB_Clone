@@ -1,6 +1,8 @@
 package com.main.beans;
 
-import java.util.Date;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Date;
 
 import javax.servlet.http.Part;
 
@@ -14,7 +16,8 @@ public class User
 	private String email;
 	private String country;
 	private String password;
-	private Part file;
+	private InputStream file;
+	
 	
 	public User()
 	{
@@ -35,7 +38,8 @@ public class User
 	}
 
 	public void setUserid(String userid) {
-		this.userid = userid;
+		PasswordHashing pws=new PasswordHashing();
+		this.userid = pws.doHashing(userid);
 	}
 
 	public String getUsernm() {
@@ -91,15 +95,17 @@ public class User
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		PasswordHashing pws=new PasswordHashing();
+		this.password = pws.doHashing(password);;
 	}
 
-	public Part getFile() {
+	public InputStream getFile() {
 		return file;
 	}
 
-	public void setFile(Part file) {
-		this.file = file;
+	public void setFile(Part file) throws IOException {
+		
+		this.file = file.getInputStream();
 		
 	}
 

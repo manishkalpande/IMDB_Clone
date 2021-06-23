@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +7,25 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" type="text/css" href="css/addmoneybank.css">
+<script type="text/javascript">
+
+	function passwordCheck()
+	{
+		let pass=document.getElementById("password").value;
+		let pass1=document.getElementById("psw_repeat").value;
+		
+		if(pass != pass1)
+			{
+			alret("Password Does Not Match");
+			}	
+	}
+
+</script>
 
     </head>
     <body>
     
-    <form name="frm" method="post" action="RegisterUser" enctype="multipart/form-data">
+    <form name="frm" method="post" action="RegisterUser" enctype="multipart/form-data" onsubmit="passwordCheck()">
       <div class="container">
         <h1>New Register</h1>
         <p>Please fill in this form to create an account.</p>
@@ -81,5 +97,5 @@
       </div>
     </form>
     
-    </body>
-    </html>
+</body>
+</html>

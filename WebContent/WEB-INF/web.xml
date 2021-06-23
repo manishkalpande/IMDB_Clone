@@ -13,7 +13,7 @@
     <servlet-name>garry</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  <servlet>
+    <servlet>
     <servlet-name>Faces Servlet</servlet-name>
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
@@ -22,4 +22,5 @@
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
   </servlet-mapping>
+
 </web-app>

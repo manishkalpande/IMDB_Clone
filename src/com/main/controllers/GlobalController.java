@@ -90,20 +90,21 @@ public class GlobalController {
 	    System.out.println("login page");
 	    return "login";
 	  }
-	@RequestMapping(path = "/check",  method={RequestMethod.POST, RequestMethod.GET})
-	public String processForm(@ModelAttribute Check check,Model model) {		
-		System.out.println(check);
+	@RequestMapping(path = "/check",  method={RequestMethod.POST})
+	public String processForm(@ModelAttribute User user,Model model) {		
+		System.out.println(user);
 		// process
-		String uid=check.getUid();
-		String psw=check.getPswd();
+		String uid=user.getUserid();
+		String psw=user.getPassword();
 		
 		Connection con;
 		PreparedStatement pst;
 		ResultSet rs;
-		try {
+		try 
+		{
 			DBConnector dbc=new DBConnector();
 			con=dbc.getDbconnection();
-			pst = con.prepareStatement("select * from users where user_id=? and pass=?;");
+			pst = con.prepareStatement("select * from user where user_id=? and pass=?;");
 			pst.setString(1, uid);
 			pst.setString(2, psw);
 			rs = pst.executeQuery();
@@ -132,12 +133,12 @@ public class GlobalController {
 		return "success";	
 	}
 	
-//	@RequestMapping("/")
-//	public String newRegister()
-//	{
-//		
-//		return "";
-//	}
+	@RequestMapping("/newRegister")
+	public String newRegister()
+	{
+		
+		return "newRegister";
+	}
 
 	@RequestMapping("/upload")
 	public String showForm() {
@@ -152,12 +153,13 @@ public class GlobalController {
 		return "success";
 	}
 	
-	@RequestMapping(path= "/RegisterUser", method= {RequestMethod.GET})
+	@RequestMapping(path= "/RegisterUser", method= {RequestMethod.POST})
 	public String newUserRegister(@ModelAttribute User user,Model model)
 	{
+		RegisterUser reg=new RegisterUser();
+		reg.register();
 		
-		
-		return"";
+		return"index";
 	}
 	
 	@RequestMapping("/trilermovies")
@@ -176,5 +178,9 @@ public class GlobalController {
 	
 	
 	
-
+	
 }
+
+
+
+

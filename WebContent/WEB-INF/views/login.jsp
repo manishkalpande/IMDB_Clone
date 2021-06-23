@@ -27,18 +27,18 @@
   </div>
 
                 <div class="container">
-                <h1>E_wallet</h1>
+                <h1>IMDB</h1>
 
         	<form  method="post" action="check">
         		<table>
         		 <tr>
 	 		<td><label for=""><b>Enter UserID</label></td>
-		     <td><input type="text" placeholder="Enter UserId" name="uid"
-						id="uid" required>
+		     <td><input type="text" placeholder="Enter UserId" name="userid"
+						id="userid" required>
 	 	 <tr>
  			<td><label for=""><b>Enter Password</label></td>
-   	     <td><input type="password" placeholder="Enter Password" name="pswd"
-						id="pswd" required>
+   	     <td><input type="password" placeholder="Enter Password" name="password"
+						id="password" required>
 	 		</tr>
 	 			<tr>	
       			<td>

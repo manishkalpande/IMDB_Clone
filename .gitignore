@@ -2,6 +2,6 @@
 /.settings/
 .classpath
 .project
-/.metadate/
+/.metadata/
 /bin/
-/src/com/main/beans/PasswordHashing.java
+/src/com/main/beans/DBConnector.java
