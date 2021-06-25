@@ -16,7 +16,7 @@ public class User
 	private String email;
 	private String country;
 	private String password;
-	private InputStream file;
+	private Part file;
 	
 	
 	public User()
@@ -38,8 +38,7 @@ public class User
 	}
 
 	public void setUserid(String userid) {
-		PasswordHashing pws=new PasswordHashing();
-		this.userid = pws.doHashing(userid);
+		this.userid = userid;
 	}
 
 	public String getUsernm() {
@@ -95,17 +94,16 @@ public class User
 	}
 
 	public void setPassword(String password) {
-		PasswordHashing pws=new PasswordHashing();
-		this.password = pws.doHashing(password);;
+		this.password = password;
 	}
 
-	public InputStream getFile() {
+	public Part getFile() {
 		return file;
 	}
 
-	public void setFile(Part file) throws IOException {
+	public void setFile(Part file){ 	
 		
-		this.file = file.getInputStream();
+		this.file = file;
 		
 	}
 

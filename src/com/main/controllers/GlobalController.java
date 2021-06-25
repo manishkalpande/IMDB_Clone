@@ -1,5 +1,6 @@
 package com.main.controllers;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -90,7 +91,7 @@ public class GlobalController {
 	    System.out.println("login page");
 	    return "login";
 	  }
-	@RequestMapping(path = "/check",  method={RequestMethod.POST})
+	@RequestMapping(path = "/check",  method={RequestMethod.GET,RequestMethod.POST})
 	public String processForm(@ModelAttribute User user,Model model) {		
 		System.out.println(user);
 		// process
@@ -154,10 +155,10 @@ public class GlobalController {
 	}
 	
 	@RequestMapping(path= "/RegisterUser", method= {RequestMethod.POST})
-	public String newUserRegister(@ModelAttribute User user,Model model)
+	public String newUserRegister(@ModelAttribute User user,Model model) throws IOException
 	{
 		RegisterUser reg=new RegisterUser();
-		reg.register();
+		reg.register(user);
 		
 		return"index";
 	}

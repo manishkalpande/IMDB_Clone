@@ -1,19 +1,25 @@
 package com.main.beans;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
+
+import javax.servlet.http.Part;
 
 public class RegisterUser 
 {	
 	
-	public String register() 
+	public String register(User user) throws IOException 
 	{
-		User user=new User();
+		Part files=user.getFile();
+		InputStream fileContent= files.getInputStream();
 		
 		Connection con;
 		CallableStatement cst;
 		ResultSet rs;
 		try 
 		{
+			
 			
 			DBConnector db=new DBConnector();
 			con=db.getDbconnection();
@@ -31,7 +37,7 @@ public class RegisterUser
 			cst.setDate(6,user.getDob());
 			cst.setString(7,user.getMob());
 			cst.setString(8,user.getCountry());
-			cst.setBlob(9,user.getFile());
+			cst.setBlob(9,fileContent);
 			cst.execute();
 			
 			
