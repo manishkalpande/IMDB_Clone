@@ -2,5 +2,6 @@
 /.settings/
 .classpath
 .project
-
+/.metadata/
 /bin/
+/src/com/main/beans/DBConnector.java
