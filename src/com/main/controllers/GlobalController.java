@@ -113,7 +113,7 @@ public class GlobalController {
 			if(rs.next())
 			{
 				ses=request.getSession(true);
-				ses.setAttribute("userid",uid);
+				ses.setAttribute("userid",user.getUid());
 				
 				/*
 				 * String mobno=rs.getString("mob_no"); HttpSession
@@ -155,7 +155,7 @@ public class GlobalController {
 	}
 	
 	@RequestMapping(path= "/RegisterUser", method= {RequestMethod.POST})
-	public String newUserRegister(@ModelAttribute User user,Model model) throws IOException
+	public String newUserRegister(@ModelAttribute User user,Model model)
 	{
 		RegisterUser reg=new RegisterUser();
 		reg.register(user);
@@ -175,7 +175,11 @@ public class GlobalController {
 		return redirectview;
 	}
 	
-	
+	@RequestMapping("/logout")
+	public String logOut()
+	{
+		return "logout";
+	}
 	
 	
 	

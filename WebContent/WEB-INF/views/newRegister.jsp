@@ -25,7 +25,7 @@
     </head>
     <body>
     
-    <form name="frm" method="post" action="RegisterUser" enctype="multipart/form-data" onsubmit="passwordCheck()">
+    <form name="frm" method="post" action="RegisterUser" onsubmit="passwordCheck()">
       <div class="container">
         <h1>New Register</h1>
         <p>Please fill in this form to create an account.</p>
@@ -77,11 +77,7 @@
         <td><label for="psw-repeat"><b>Repeat Password :</b></label>
         <td><input type="password" placeholder="Repeat Password" name="psw_repeat" id="psw_repeat" required>
         </tr>
-        
-         <tr>
-        <td><label for="image"><b>Upload Profile Photo:</b></label>
-        <td><input type="file" name="file" multiple="true">
-        </tr>
+       
                
         <tr>
         <hr/>

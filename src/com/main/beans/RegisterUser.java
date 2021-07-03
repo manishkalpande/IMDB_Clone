@@ -4,21 +4,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 
-import javax.servlet.http.Part;
+import org.springframework.web.multipart.MultipartFile;
 
 public class RegisterUser 
 {	
 	
-	public String register(User user) throws IOException 
+	public String register(User user) 
 	{
-		Part files=user.getFile();
-		InputStream fileContent= files.getInputStream();
-		
+	
 		Connection con;
 		CallableStatement cst;
 		ResultSet rs;
 		try 
 		{
+			
 			
 			
 			DBConnector db=new DBConnector();
@@ -28,7 +27,7 @@ public class RegisterUser
 			System.out.println(user.getEmail());
 			System.out.println(user.getDob());
 			System.out.println(user.getCountry());
-			cst=con.prepareCall("{call userRegister(?,?,?,?,?,?,?,?,now(),?)}");
+			cst=con.prepareCall("{call userRegister(?,?,?,?,?,?,?,?,now())}");
 			cst.setString(1,user.getUserid());
 			cst.setString(2,user.getPassword());
 			cst.setString(3,user.getUsernm());
@@ -37,7 +36,6 @@ public class RegisterUser
 			cst.setDate(6,user.getDob());
 			cst.setString(7,user.getMob());
 			cst.setString(8,user.getCountry());
-			cst.setBlob(9,fileContent);
 			cst.execute();
 			
 			

@@ -1,14 +1,16 @@
 package com.main.beans;
 
-import java.io.IOException;
+
 import java.io.InputStream;
 import java.sql.Date;
 
-import javax.servlet.http.Part;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class User 
 {
 	private String userid;
+	private String uid;
 	private String usernm;
 	private Date dob;
 	private String gen;
@@ -16,12 +18,13 @@ public class User
 	private String email;
 	private String country;
 	private String password;
-	private Part file;
+//	private MultipartFile file;
 	
 	
 	public User()
 	{
 		userid="";
+		uid="";
 		usernm="";
 		dob=null;
 		gen="";
@@ -29,16 +32,21 @@ public class User
 		email="";
 		country="";
 		password="";
-		file=null;
+//		file=null;
 		
 	}
 
 	public String getUserid() {
-		return userid;
+		PasswordHashing pws=new PasswordHashing();	
+		return pws.doHashing(userid);
 	}
 
 	public void setUserid(String userid) {
 		this.userid = userid;
+	}
+
+	public String getUid() {
+		return userid;
 	}
 
 	public String getUsernm() {
@@ -90,27 +98,28 @@ public class User
 	}
 
 	public String getPassword() {
-		return password;
+		PasswordHashing pass=new PasswordHashing();
+		return pass.doHashing(password);
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public Part getFile() {
-		return file;
-	}
-
-	public void setFile(Part file){ 	
-		
-		this.file = file;
-		
-	}
+//	public MultipartFile getFile() {
+//		return file;
+//	}
+//
+//	public void setFile(MultipartFile file){ 	
+//		
+//		this.file = file;
+//		
+//	}
 
 	@Override
 	public String toString() {
 		return "User [userid=" + userid + ", usernm=" + usernm + ", dob=" + dob + ", gen=" + gen + ", mob=" + mob
-				+ ", email=" + email + ", country=" + country + ", password=" + password + ", file=" + file + "]";
+				+ ", email=" + email + ", country=" + country + ", password=" + password + "]";
 	}
 	
 	

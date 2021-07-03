@@ -16,8 +16,43 @@
 <script type="text/javascript" src="js/viewprofile.js"></script>
 <script type="text/javascript" src="js/balance.js"></script>
 
+<%
+    String uid=(String) session.getAttribute("userid");
+
+%>
+<script type="text/javascript">
+
+window.onload = function()
+{
+  let head=document.getElementById("header");
+  let uid=document.getElementById("uid");
+  console.log(uid.value);
+  if(uid.value != null)
+    {
+	  
+	  console.log(uid); 
+	  let userid=document.createElement("a");
+      userid.className="w3-bar-item w3-button";
+      userid.textContent="Manish";
+      userid.href="login";
+      head.append(userid);
+	  
+    }
+    else{
+  	  let userid=document.createElement("a");
+      userid.className="w3-bar-item w3-button";
+      userid.textContent="Sign In";
+      userid.href="login";
+      head.append(userid);
+     	
+    }
+
+}
+  </script>
 </head>
 <body>
+
+<input type="hidden" value=<%=uid %> id="uid">
 	<!-- Navbar (sit on top) -->
 
  <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
@@ -34,10 +69,10 @@
   		<input type="text" placeholder="search">
   <!-- Float links to the right. Hide them on small screens -->
 
-    <div class="w3-right w3-hide-small">
+    <div id="header" class="w3-right w3-hide-small">
       <a href="#projects" class="w3-bar-item w3-button">IMDBpro</a>
       <a href="#about" class="w3-bar-item w3-button">Watchist</a>
-      <a href="login" class="w3-bar-item w3-button">Sign In</a>
+     
     </div>
   </div>
 </div>
@@ -50,10 +85,10 @@
       <h3><b>TITLE HEADING</b></h3>
       <h5>Title description,  <%=session.getId() %> <span class="w3-opacity">April 7, 2014</span></h5>
       	        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE ï¿½</b></button></p>
         </div>
               <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+          <p><span class="w3-padding-large w3-right"><b>Comments ï¿½</b> <span class="w3-tag">0</span></span></p>
         </div>
     </div>
 
@@ -62,10 +97,10 @@
         tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>Trailer »</b></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>Trailer ï¿½</b></button></p>
         </div>
         <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+          <p><span class="w3-padding-large w3-right"><b>Comments ï¿½</b> <span class="w3-tag">0</span></span></p>
         </div>
       </div>
     </div>
