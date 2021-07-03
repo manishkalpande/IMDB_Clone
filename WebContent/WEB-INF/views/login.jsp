@@ -49,7 +49,7 @@
         	</table>
         	
         	</form>
-        	        <a href="Adminlogin.jsp">Admin Login here</a>
+        	        <a href="adminlogin">Admin Login here</a>
   				<br>
         		<a href="newRegister">New User? Register here</a>
         </div>
