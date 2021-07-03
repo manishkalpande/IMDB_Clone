@@ -6,11 +6,8 @@
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<<<<<<< HEAD
-<title>IMDB CLONE</title>
 
-=======
->>>>>>> 26fc8af186abe67fa5a1a4800ad3e30ca08f8863
+<title>IMDB CLONE</title>
 <title>IMDB</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,19 +82,22 @@ window.onload = function()
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="/w3images/woods.jpg" alt="Nature" style="width:100%">
+    <img src="<%=request.getContextPath()%>/views/css/mission-imposible-fallout.jsp" alt="Nature" style="width:100%">
     <div class="w3-container">
-<<<<<<< HEAD
       <h3><b>MOVIES ONLY</b></h3>
       <h5>Best Collection Available <span class="w3-opacity">[premuim movies]</span></h5>
       	        <div class="w3-col m8 s12">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><b>read more »</b></button></p>
-=======
+
       <h3><b>TITLE HEADING</b></h3>
       <h5>Title description,  <%=session.getId() %> <span class="w3-opacity">April 7, 2014</span></h5>
+
+      <h3><b>Avenger EndGame</b></h3>
+      <h5>Title description,  <span class="w3-opacity">April 7, 2014</span></h5>
+
       	        <div class="w3-col m8 s12">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE ï¿½</b></button></p>
->>>>>>> 26fc8af186abe67fa5a1a4800ad3e30ca08f8863
+
         </div>
               <div class="w3-col m4 w3-hide-small">
           <p><span class="w3-padding-large w3-right"><b>Comments ï¿½</b> <span class="w3-tag">0</span></span></p>

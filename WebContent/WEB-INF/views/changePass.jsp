@@ -12,12 +12,17 @@
 	<form name="frm" method="post" action="changePassword">
 	<table>
      <tr>
-	     <td>
-	     <td>
+	     <td>Current Password
+	     <td><input type="password" name="oldpass" id="oldpass">
 	</tr>
 		<tr>
+	     <td>New Password
+	     <td><input type="password" name="newpass" id="newpass">
+	</tr>
+		</tr>
+		<tr>
 	     <td>
-	     <td>
+	     <td><input type="submit" value="Submit">
 	</tr>
 	
 	

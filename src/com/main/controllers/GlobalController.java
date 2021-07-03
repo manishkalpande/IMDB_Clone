@@ -176,8 +176,26 @@ public class GlobalController {
 		return "logout";
 	}
 	
+	@RequestMapping("/changePass")
+	public String changePass()
+	{
+		return "changePass";
+	}
+	@RequestMapping("/changePassword")
+	public String changePassword(@RequestParam("oldpass") String oldpass,@RequestParam("newpass") String newpass)
+	{
+		
+		
+		
+		
+		return "";
+	}
 	
-	
+	@RequestMapping("/adminlogin")
+	public String adminlogin()
+	{
+		return "adminlogin";
+	}
 	
 >>>>>>> 26fc8af186abe67fa5a1a4800ad3e30ca08f8863
 }
